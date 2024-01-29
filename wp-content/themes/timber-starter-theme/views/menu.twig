@@ -1,10 +1,22 @@
-{% if menu %}
-	<ul>
-	{% for item in items %}
-		<li class="{{ item.classes | join(' ') }}">
-			<a target="{{ item.target }}" href="{{ item.link }}">{{ item.title }}</a>
-			{% include "menu.twig" with {'items': item.children} %}
-		</li>
-	{% endfor %}
-	</ul>
-{% endif %}
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <div class="container-fluid">
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
+    <div class="collapse navbar-collapse" id="navbarNavDropdown">
+      {% if items %}
+        <ul class="navbar-nav">
+          {% for subitem in items %}
+            <li class="nav-item">
+              <a href="{{ subitem.link }}" target="{{ subitem.target }}" class="nav-link customcolor">{{ subitem.title }}</a>
+              {% if subitem.children %}
+                {% include 'menu.twig' with { items: subitem.children } %}
+              {% endif %}
+            </li>
+          {% endfor %}
+          <div class="d-lg-none accedi_icon">
+            <span class="navbar-text ms-2"><i class="bi bi-person"></i> Accedi</span>
+          </div>
+        </ul>
+      {% endif %}
+    </div>
+  </div>
+</nav>

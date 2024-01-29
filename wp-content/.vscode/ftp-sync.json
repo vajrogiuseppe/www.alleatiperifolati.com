@@ -1,0 +1,28 @@
+{
+    "remotePath": "./www.alleatiperifolati.com/wp-content/",
+    "host": "ftp.alleatiperifolati.com",
+    "username": "16211179@aruba.it",
+    "password": "Galaxy!2025",
+    "port": 21,
+    "secure": false,
+    "protocol": "ftp",
+    "passive": false,
+    "debug": false,
+    "uploadOnSave": false,
+    "privateKeyPath": null,
+    "passphrase": null,
+    "agent": null,
+    "allow": [],
+    "ignore": [
+        "\\.vscode",
+        "\\.git",
+        "\\.DS_Store",
+        ".scss"  
+    ],
+    "generatedFiles": {
+        "extensionsToInclude": [
+            ""
+        ],
+        "path": ""
+    }
+}

@@ -1,0 +1,31 @@
+<header class="header">
+  {% block header %}
+    <div class="container-fluid">
+      <nav class="navbar navbar-expand-lg navbar-light bg-light justify-content-around">
+        <!-- Logo -->
+        <div class="logo">
+          {% set custom_logo = function('get_custom_logo') %}
+          {% if custom_logo %}
+            {{ custom_logo|raw }}
+          {% else %}
+            <a class="hdr-logo-link" href="{{ site.url }}" rel="home">{{ site.name }}</a>
+          {% endif %}
+        </div>
+        <!-- MENU -->
+        <div class="menu">
+          {% include 'menu.twig' with { items: menu.get_items } %}
+        </div>
+        <!-- FINE MENU -->
+        <!-- CERCA -->
+        <div class="search">
+          <form class="d-flex" action="{{ site.url }}" method="get">
+            <input class="form-control me-2" type="search" name="s" placeholder="Search" aria-label="Search" />
+            <button class="btn btn-outline-success" type="submit">Search</button>
+          </form>
+        </div>
+        <!-- ACCEDI -->
+        <span class="navbar-text ms-2 d-none d-md-block"><i class="bi bi-person"></i> Accedi</span>
+      </nav>
+    </div>
+  {% endblock %}
+</header>

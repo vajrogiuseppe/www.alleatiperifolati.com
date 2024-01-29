@@ -1,0 +1,36 @@
+body {
+  font-family: "Roboto", sans-serif;
+}
+
+.fm-roboto {
+  font-family: "Roboto";
+}
+
+.customcolor a {
+  color: #A61A34 !important;
+}
+
+.logo img {
+  max-width: 300px;
+}
+
+.banner-red {
+  background-image: url("/wp-content/uploads/2024/01/bg-home.png");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center;
+  position: relative;
+}
+
+.h2-title {
+  font-family: "Raleway";
+  font-size: 35px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 140%;
+  max-width: 30vw;
+}
+
+.img-banner_home img {
+  margin-top: -2em;
+}/*# sourceMappingURL=custom.css.map */
