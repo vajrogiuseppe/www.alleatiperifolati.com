@@ -1,25 +1,12 @@
-{% extends 'base.twig' %}
+{% extends "base.twig" %}
 
 {% block content %}
-  <div class="container-fluid banner-red">
-    <div class="container">
-      <div class="banner d-flex align-items-center">
-          <div class="row">
-            <div class="col-6">
-                <div class="text-banner_home">
-                    <h2 class="h2-title">
-                        «La dieta occidentale è carente di folati e non sufficiente ad assicurarne 
-                        i fabbisogni.»
-                    </h2>
-                </div>
-            </div>
-            <div class="col-6">
-                <div class="img-banner_home">
-                    <img src="{{site.url}}/wp-content/uploads/2024/01/img_medici.png" class="img-fluid">
-                </div>
-            </div>
-        </div>
-      </div>
-    </div>
-  </div>
+<div class="container-fluid">
+	<h2>{{ foo }}</h2>
+	<p>{{ qux }}</p>
+	{% for post in posts %}
+		{% include ['tease-'~post.post_type~'.twig', 'tease.twig'] %}
+	{% endfor %}
+	</div>
+	{% include 'partial/pagination.twig' with { pagination: posts.pagination({show_all: false, mid_size: 3, end_size: 2}) } %}
 {% endblock %}

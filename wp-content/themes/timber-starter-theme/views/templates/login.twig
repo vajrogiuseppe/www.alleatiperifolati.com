@@ -1,0 +1,27 @@
+{% extends 'base.twig' %}
+
+{% block content %}
+  <div class="container-fluid p-0">
+    <div class="bg-login">
+        <div class="login_logo-wrapper">
+            <img src="{{site.link}}/wp-content/uploads/2024/02/Contenitore.png" class="img-fluid logo_log">
+        </div>
+         <div class="login_doc-wrapper">
+           <div class="wrapper_login">
+                <div class="logo">
+                    <img src="{{site.link}}/wp-content/uploads/2024/02/Badge-Verified.svg"
+                    class="img-fluid doclogo">
+                </div>
+                <div class="text_block">
+                    <h3 class="blu fm-rale text-center fw-bolder">Accedi al sito <br/> con Opendoctor</h3>
+                    <p>L’accesso ai contenuti è riservato alla classe medica</p>
+                </div>
+                <div class="cta_login">
+                    <button class="login_cta btn btn-cta cta_blu text-white">{% include 'partial/login_key_icon.twig' %} Accedi</button> 
+                    <a href="" class="fm-roboto blu register">Registrati</a>
+                </div>
+           </div>
+        </div>
+    </div>
+  </div>
+{% endblock %}

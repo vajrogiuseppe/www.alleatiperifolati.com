@@ -1,0 +1,39 @@
+<nav class="navbar">
+  <div class="container-fluid">
+    <button class="navbar-toggler collapsed" type="button" data-bs-toggle="offcanvas" data-bs-toggle="collapse"  data-bs-target="#offcanvasDarkNavbar"
+          aria-controls="offcanvasDarkNavbar" aria-controls="offcanvasTop">
+          <span class="icon-bar top-bar"></span>
+          <span class="icon-bar middle-bar"></span>
+          <span class="icon-bar bottom-bar"></span>
+        </button>
+    <div class="offcanvas  offcanvas-top w-100" tabindex="-1" id="offcanvasDarkNavbar" aria-labelledby="offcanvasDarkNavbarLabel">
+      <div class="offcanvas-body flex-item_mobile">
+        <div class="offcanvas-header d-flex justify-content-end">
+        </div>
+        {% if items %}
+          <ul class="navbar-nav flex-column text-center">
+            {% for subitem in items %}
+              <li class="nav-item">
+                <a href="{{ subitem.link }}" target="{{ subitem.target }}" class="nav-link customcolor">{{ subitem.title }}</a>
+                {% if subitem.children %}
+                  {% include 'menu.twig' with { items: subitem.children } %}
+                {% endif %}
+              </li>
+            {% endfor %}
+          </ul>
+          <div class="accedi_icon text-center mt-auto">
+            <div class="login">
+          <a href="{{site.link}}/login">
+             <span class="navbar-text  ">
+          {% include 'partial/user_icon.twig' %}
+           </span>
+          </a>
+        </div>
+          </div>
+        {% endif %}
+      </div>
+    </div>
+  </div>
+</nav>
+
+

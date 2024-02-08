@@ -17,11 +17,14 @@
         "\\.vscode",
         "\\.git",
         "\\.DS_Store",
-        ".scss"  
+        ".scss"
     ],
     "generatedFiles": {
         "extensionsToInclude": [
-            ""
+            ".twig",
+            ".css",
+            ".php"
+
         ],
         "path": ""
     }

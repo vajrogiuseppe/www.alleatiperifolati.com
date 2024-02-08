@@ -1,7 +1,7 @@
 <header class="header">
   {% block header %}
     <div class="container-fluid">
-      <nav class="navbar navbar-expand-lg navbar-light bg-light justify-content-around">
+      <nav class="navbar flex-nowrap navbar-expand-md navbar-light bg-light justify-content-around">
         <!-- Logo -->
         <div class="logo">
           {% set custom_logo = function('get_custom_logo') %}
@@ -12,20 +12,55 @@
           {% endif %}
         </div>
         <!-- MENU -->
-        <div class="menu">
+        <div class="menu menu-desk d-none d-md-block">
           {% include 'menu.twig' with { items: menu.get_items } %}
         </div>
+
+       
         <!-- FINE MENU -->
-        <!-- CERCA -->
-        <div class="search">
-          <form class="d-flex" action="{{ site.url }}" method="get">
-            <input class="form-control me-2" type="search" name="s" placeholder="Search" aria-label="Search" />
-            <button class="btn btn-outline-success" type="submit">Search</button>
-          </form>
+        <div class="left-header d-lg-flex d-none">
+            <!-- CERCA -->
+        <div class="search_header ">
+          <div class="searchbar">
+            <form class="d-flex" action="{{ site.url }}" method="get">
+              <input class="search_input" type="search" name="s" placeholder="Cerca..." />
+              <button class="search_icon">{% include 'partial/search_icon.twig' %}</button>
+            </form>
+          </div>
         </div>
+        
         <!-- ACCEDI -->
-        <span class="navbar-text ms-2 d-none d-md-block"><i class="bi bi-person"></i> Accedi</span>
+          <div class="login">
+            <a href="{{site.link}}/login">
+              <span class="navbar-text  d-none d-md-block">
+            {% include 'partial/user_icon.twig' %}
+            </span>
+            </a>
+          </div>
+        </div>
+         <!-- LOGIN E SEARCH MOBILE -->
+        <div class=" d-flex align-items-center d-md-none searchmobile">
+          <div class="search_header  ">
+            <button class="search navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#searchModal" aria-controls="searchModal">               {% include 'partial/search_icon.twig' %}
+            </button>
+            <div class="offcanvas searchoffcanvas offcanvas-top" tabindex="-1" id="searchModal" aria-labelledby="searchModalLabel">
+                <div class="offcanvas-body bodysearch">
+                  <div class="search_header ">
+                    <div class="searchbar">
+                      <form class="d-flex" action="{{ site.url }}" method="get">
+                        <input class="search_input" type="search" name="s" placeholder="Cerca..." />
+                        <button class="search_icon">{% include 'partial/search_icon.twig' %}</button>
+                    </form>
+                  </div>
+                    <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+                </div>
+              </div>
+            </div>
+          </div> 
+         <div class="menu menu-mob d-block d-md-none">
+          {% include 'menu-mobile.twig' with { items: menu.get_items } %}
+        </div>
       </nav>
-    </div>
+    </div>      
   {% endblock %}
 </header>

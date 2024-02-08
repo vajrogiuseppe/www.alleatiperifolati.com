@@ -1,35 +1,193 @@
 {% extends 'base.twig' %}
 
 {% block content %}
-  <div class="container-fluid ">
-  <div class="banner-red">
-    <div class="container">
-      <div class="banner ">
-          <div class="row d-flex align-items-center">
-            <div class="col-6">
-                <div class="text-banner_home">
-                    <h2 class="h2-title text-white">
-                        «La dieta occidentale è carente di folati e non sufficiente ad assicurarne 
-                        i fabbisogni.»
-                    </h2>
-                </div>
+<div class="bg-home">
+    {% include 'partial/banner_home.twig' %}
+    <div class="container p-0">
+      <div class="text-heading pt-5 pb-5 mb-3">
+        <h2 class="rosso fm-rale text-center fw-bolder">Esplora i contenuti</h2>
+      </div>
+      <div class="d-flex contenuti_whit-img">
+        <div class="img-circle">
+          <img src="{{ site.url }}/wp-content/uploads/2024/01/imgcircle.png" class="img-fluid" />
+        </div>
+        <div class="card-service">
+          <div class="card_service-one">
+                       <a href="{{site.link}}/video-archivio/">
+
+            <div class="card_intro">
+              <div class="icon">
+                <img src="{{ site.url }}/wp-content/uploads/2024/01/video.png" alt="" />
+              </div>
+              <div class="text">
+                <span class="rosso fm-rale text-center fw-bolder">Video</span>
+                <span class="fm-roboto">Esperti KOL raccontano storie di folati</span>
+              </div>
+              <div class="arrow_icon">
+               
+                  <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32" fill="none">
+                    <mask id="mask0_126_107" style="mask-type:alpha" maskUnits="userSpaceOnUse" x="0" y="0" width="32" height="32">
+                      <rect width="32" height="32" fill="#D9D9D9" />
+                    </mask>
+                    <g mask="url(#mask0_126_107)">
+                      <path d="M19.7743 15.9998L9.73072 5.95621C9.46576 5.69125 9.3367 5.37587 9.34352 5.01007C9.35036 4.64425 9.48626 4.32887 9.75122 4.06394C10.0162 3.79898 10.3316 3.6665 10.6974 3.6665C11.0632 3.6665 11.3785 3.79898 11.6435 4.06394L21.8512 14.2921C22.0922 14.5332 22.2708 14.8032 22.3871 15.1024C22.5033 15.4015 22.5614 15.7007 22.5614 15.9998C22.5614 16.2989 22.5033 16.5981 22.3871 16.8972C22.2708 17.1964 22.0922 17.4664 21.8512 17.7075L11.623 27.9357C11.358 28.2006 11.0461 28.3297 10.6871 28.3229C10.3281 28.316 10.0162 28.1801 9.75122 27.9152C9.48626 27.6502 9.35378 27.3348 9.35378 26.969C9.35378 26.6032 9.48626 26.2879 9.75122 26.0229L19.7743 15.9998Z" fill="#A61A34" />
+                    </g>
+                  </svg>
+              
+              </div>
+                
             </div>
-            <div class="col-6">
-                <div class="img-banner_home">
-                    <img src="{{site.url}}/wp-content/uploads/2024/01/img_medici.png" class="img-fluid">
-                </div>
+            </a>
+          </div>
+          <div class="card_service-one">
+            <div class="card_intro">
+              <div class="icon">
+                <img src="{{ site.url }}/wp-content/uploads/2024/01/medico.png" alt="" />
+              </div>
+              <div class="text">
+                <span class="rosso fm-rale text-center fw-bolder">Scenari clinici</span>
+                <span class="fm-roboto">Risolvi gli scenari e scopri la diagnosi</span>
+              </div>
+              <div class="arrow_icon">
+                <a href="{{site.link}}/scenari-clinici">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32" fill="none">
+                    <mask id="mask0_126_107" style="mask-type:alpha" maskUnits="userSpaceOnUse" x="0" y="0" width="32" height="32">
+                      <rect width="32" height="32" fill="#D9D9D9" />
+                    </mask>
+                    <g mask="url(#mask0_126_107)">
+                      <path d="M19.7743 15.9998L9.73072 5.95621C9.46576 5.69125 9.3367 5.37587 9.34352 5.01007C9.35036 4.64425 9.48626 4.32887 9.75122 4.06394C10.0162 3.79898 10.3316 3.6665 10.6974 3.6665C11.0632 3.6665 11.3785 3.79898 11.6435 4.06394L21.8512 14.2921C22.0922 14.5332 22.2708 14.8032 22.3871 15.1024C22.5033 15.4015 22.5614 15.7007 22.5614 15.9998C22.5614 16.2989 22.5033 16.5981 22.3871 16.8972C22.2708 17.1964 22.0922 17.4664 21.8512 17.7075L11.623 27.9357C11.358 28.2006 11.0461 28.3297 10.6871 28.3229C10.3281 28.316 10.0162 28.1801 9.75122 27.9152C9.48626 27.6502 9.35378 27.3348 9.35378 26.969C9.35378 26.6032 9.48626 26.2879 9.75122 26.0229L19.7743 15.9998Z" fill="#A61A34" />
+                    </g>
+                  </svg>
+                </a>
+              </div>
             </div>
+          </div>
+          <div class="card_service-one">
+            <div class="card_intro">
+              <div class="icon">
+                <img src="{{ site.url }}/wp-content/uploads/2024/01/cartella_icona.png" alt="" />
+              </div>
+              <div class="text">
+                <span class="rosso fm-rale text-center fw-bolder">Risorse</span>
+                <span class="fm-roboto">Infografiche, poster e altre risorse</span>
+              </div>
+              <div class="arrow_icon">
+                <a href="{{site.link}}/risorse">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32" fill="none">
+                    <mask id="mask0_126_107" style="mask-type:alpha" maskUnits="userSpaceOnUse" x="0" y="0" width="32" height="32">
+                      <rect width="32" height="32" fill="#D9D9D9" />
+                    </mask>
+                    <g mask="url(#mask0_126_107)">
+                      <path d="M19.7743 15.9998L9.73072 5.95621C9.46576 5.69125 9.3367 5.37587 9.34352 5.01007C9.35036 4.64425 9.48626 4.32887 9.75122 4.06394C10.0162 3.79898 10.3316 3.6665 10.6974 3.6665C11.0632 3.6665 11.3785 3.79898 11.6435 4.06394L21.8512 14.2921C22.0922 14.5332 22.2708 14.8032 22.3871 15.1024C22.5033 15.4015 22.5614 15.7007 22.5614 15.9998C22.5614 16.2989 22.5033 16.5981 22.3871 16.8972C22.2708 17.1964 22.0922 17.4664 21.8512 17.7075L11.623 27.9357C11.358 28.2006 11.0461 28.3297 10.6871 28.3229C10.3281 28.316 10.0162 28.1801 9.75122 27.9152C9.48626 27.6502 9.35378 27.3348 9.35378 26.969C9.35378 26.6032 9.48626 26.2879 9.75122 26.0229L19.7743 15.9998Z" fill="#A61A34" />
+                    </g>
+                  </svg>
+                </a>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
-    </div>
-    </div>
-    <div class="banner-seconddary">
-      <div class="container">
-        <div class="text-banner_second">
-          <p class="text-center fm-roboto">Alleati per i Folati nasce come spazio di collaborazione tra Specialisti e MMG, alleati nel condividere informazioni sul tema della carenza di folati e diffondere la corretta 
-          informazione sull’importanza dei folati nella vita.</p>
-        </div>
-      </div>
+      <div class="text-heading pt-5 pb-5 mb-3">
+        <h2 class="rosso fm-rale text-center fw-bolder">Contenuti aggiunti di recente</h2>
+         <div class="row row-cols-1 row-cols-md-2 g-4">
+              {% set primo_scenario = scenari|first %}
+              {% if primo_scenario %}
+                <div class="col-md-4 col-12">
+                  <div class="card border-0">
+                  <div class="card-body">
+                    <img class="card-img-top mb-3" src="{{ primo_scenario.scenario.copertina.url }}" alt="{{ primo_scenario.title }}" />
+                    <div class="icon_post d-flex  align-items-center mb-3">
+                      <div class="icon">
+                        <img src="{{site.link}}/wp-content/uploads/2024/01/medico.png">
+                      </div>
+                      <div class="text">
+                        <span class="text-uppercase fm-roboto">Scenari</span>
+                      </div>
+                    </div>
+                    <h5 class="rosso fm-rale  fw-bolder">{{ primo_scenario.title }}</h5>
+                    <div class="fm-roboto fs-small">{{ primo_scenario.scenario.descrizione|raw }}</div>
+                    <a  class="cta_cardhome" href="{{ primo_scenario.link }}"><span>Consulta l'anagrafica</span>
+                      <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32" fill="none">
+                    <mask id="mask0_126_107" style="mask-type:alpha" maskUnits="userSpaceOnUse" x="0" y="0" width="32" height="32">
+                      <rect width="32" height="32" fill="#D9D9D9" />
+                    </mask>
+                    <g mask="url(#mask0_126_107)">
+                      <path d="M19.7743 15.9998L9.73072 5.95621C9.46576 5.69125 9.3367 5.37587 9.34352 5.01007C9.35036 4.64425 9.48626 4.32887 9.75122 4.06394C10.0162 3.79898 10.3316 3.6665 10.6974 3.6665C11.0632 3.6665 11.3785 3.79898 11.6435 4.06394L21.8512 14.2921C22.0922 14.5332 22.2708 14.8032 22.3871 15.1024C22.5033 15.4015 22.5614 15.7007 22.5614 15.9998C22.5614 16.2989 22.5033 16.5981 22.3871 16.8972C22.2708 17.1964 22.0922 17.4664 21.8512 17.7075L11.623 27.9357C11.358 28.2006 11.0461 28.3297 10.6871 28.3229C10.3281 28.316 10.0162 28.1801 9.75122 27.9152C9.48626 27.6502 9.35378 27.3348 9.35378 26.969C9.35378 26.6032 9.48626 26.2879 9.75122 26.0229L19.7743 15.9998Z" fill="#A61A34" />
+                    </g>
+                  </svg>
+                    </a>
+                  </div>
+                </div>
+                </div>
+                {% endif %}
+                {% set primo_video = video|first %}
+              {% if primo_video %}
+                <div class="col-md-4 col-12">
+                  <div class="card border-0">
+                  <div class="card-body">
+                    <img class="card-img-top mb-3" src="{{ primo_video.video.copertina.url }}" alt="{{ primo_video.title }}" />
+                    <div class="icon_post d-flex  align-items-center mb-3">
+                      <div class="icon">
+                        <img src="{{site.link}}/wp-content/uploads/2024/02/iconavideo-1.png">
+                      </div>
+                      <div class="text">
+                        <span class="text-uppercase fm-roboto">Video</span>
+                      </div>
+                    </div>
+                    <h5 class="rosso fm-rale  fw-bolder">{{ primo_video.title }}</h5>
+                    <div class="fm-roboto fs-small">{{ primo_video.video.descrizione|raw }}</div>
+                    <a  class="cta_cardhome" href="{{ primo_vide.link }}"><span>Guarda il video</span>
+                      <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32" fill="none">
+                    <mask id="mask0_126_107" style="mask-type:alpha" maskUnits="userSpaceOnUse" x="0" y="0" width="32" height="32">
+                      <rect width="32" height="32" fill="#D9D9D9" />
+                    </mask>
+                    <g mask="url(#mask0_126_107)">
+                      <path d="M19.7743 15.9998L9.73072 5.95621C9.46576 5.69125 9.3367 5.37587 9.34352 5.01007C9.35036 4.64425 9.48626 4.32887 9.75122 4.06394C10.0162 3.79898 10.3316 3.6665 10.6974 3.6665C11.0632 3.6665 11.3785 3.79898 11.6435 4.06394L21.8512 14.2921C22.0922 14.5332 22.2708 14.8032 22.3871 15.1024C22.5033 15.4015 22.5614 15.7007 22.5614 15.9998C22.5614 16.2989 22.5033 16.5981 22.3871 16.8972C22.2708 17.1964 22.0922 17.4664 21.8512 17.7075L11.623 27.9357C11.358 28.2006 11.0461 28.3297 10.6871 28.3229C10.3281 28.316 10.0162 28.1801 9.75122 27.9152C9.48626 27.6502 9.35378 27.3348 9.35378 26.969C9.35378 26.6032 9.48626 26.2879 9.75122 26.0229L19.7743 15.9998Z" fill="#A61A34" />
+                    </g>
+                  </svg>
+                    </a>                  </div>
+                </div>
+                </div>
+                {% endif %}
+               {% set prima_risorsa = risorse|first %}
+              {% if prima_risorsa %}
+                <div class="col-md-4 col-12">
+                  <div class="card border-0">
+                  <div class="card-body">
+                    <img class="card-img-top mb-3" src="{{ prima_risorsa.risorse.copertina.url }}" alt="{{ prima_risorsa.title }}" />
+                    <div class="icon_post d-flex  align-items-center mb-3">
+                      <div class="icon">
+                        <img src="{{site.link}}/wp-content/uploads/2024/01/cartella_icona.png">
+                      </div>
+                      <div class="text">
+                        <span class="text-uppercase fm-roboto">Risorse</span>
+                      </div>
+                    </div>
+                    <h5 class="rosso fm-rale  fw-bolder">{{ prima_risorsa.title }}</h5>
+                    <div class="fm-roboto fs-small">{{ prima_risorsa.risorse.descrizione|raw }}</div>
+<a  class="cta_cardhome" href="{{ primo_vide.link }}"><span>Consulta l'anagrafica</span>
+                      <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32" fill="none">
+                    <mask id="mask0_126_107" style="mask-type:alpha" maskUnits="userSpaceOnUse" x="0" y="0" width="32" height="32">
+                      <rect width="32" height="32" fill="#D9D9D9" />
+                    </mask>
+                    <g mask="url(#mask0_126_107)">
+                      <path d="M19.7743 15.9998L9.73072 5.95621C9.46576 5.69125 9.3367 5.37587 9.34352 5.01007C9.35036 4.64425 9.48626 4.32887 9.75122 4.06394C10.0162 3.79898 10.3316 3.6665 10.6974 3.6665C11.0632 3.6665 11.3785 3.79898 11.6435 4.06394L21.8512 14.2921C22.0922 14.5332 22.2708 14.8032 22.3871 15.1024C22.5033 15.4015 22.5614 15.7007 22.5614 15.9998C22.5614 16.2989 22.5033 16.5981 22.3871 16.8972C22.2708 17.1964 22.0922 17.4664 21.8512 17.7075L11.623 27.9357C11.358 28.2006 11.0461 28.3297 10.6871 28.3229C10.3281 28.316 10.0162 28.1801 9.75122 27.9152C9.48626 27.6502 9.35378 27.3348 9.35378 26.969C9.35378 26.6032 9.48626 26.2879 9.75122 26.0229L19.7743 15.9998Z" fill="#A61A34" />
+                    </g>
+                  </svg>
+                    </a>                     </div>
+                </div>
+                </div>
+                {% endif %}
+             
+            
+            </div>
     </div>
   </div>
+<div class="container-fluid p-0">
+     {% include 'partial/cta_doctor.twig' %}
+
+</div>
+
+
+
 {% endblock %}
