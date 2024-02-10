@@ -24,7 +24,7 @@
           <div class="searchbar">
             <form class="d-flex" action="{{ site.url }}" method="get">
               <input class="search_input" type="search" name="s" placeholder="Cerca..." />
-              <button class="search_icon">{% include 'partial/search_icon.twig' %}</button>
+              <button class="search_icon">{% include 'partial/icon/search_icon.twig' %}</button>
             </form>
           </div>
         </div>
@@ -33,7 +33,7 @@
           <div class="login">
             <a href="{{site.link}}/login">
               <span class="navbar-text  d-none d-md-block">
-            {% include 'partial/user_icon.twig' %}
+            {% include 'partial/icon/user_icon.twig' %}
             </span>
             </a>
           </div>
@@ -41,7 +41,8 @@
          <!-- LOGIN E SEARCH MOBILE -->
         <div class=" d-flex align-items-center d-md-none searchmobile">
           <div class="search_header  ">
-            <button class="search navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#searchModal" aria-controls="searchModal">               {% include 'partial/search_icon.twig' %}
+            <button class="search navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#searchModal" aria-controls="searchModal">              
+             {% include 'partial/icon/search_icon.twig' %}
             </button>
             <div class="offcanvas searchoffcanvas offcanvas-top" tabindex="-1" id="searchModal" aria-labelledby="searchModalLabel">
                 <div class="offcanvas-body bodysearch">
@@ -49,7 +50,7 @@
                     <div class="searchbar">
                       <form class="d-flex" action="{{ site.url }}" method="get">
                         <input class="search_input" type="search" name="s" placeholder="Cerca..." />
-                        <button class="search_icon">{% include 'partial/search_icon.twig' %}</button>
+                        <button class="search_icon">{% include 'partial/icon/search_icon.twig' %}</button>
                     </form>
                   </div>
                     <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>

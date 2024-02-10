@@ -23,7 +23,8 @@
         "extensionsToInclude": [
             ".twig",
             ".css",
-            ".php"
+            ".php",
+            ".js"
 
         ],
         "path": ""

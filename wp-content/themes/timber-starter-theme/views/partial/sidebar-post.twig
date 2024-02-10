@@ -1,0 +1,39 @@
+ <div class="col-12 col-md-3">
+          <div class="row">
+            <div class="lastpost">
+              <h5 class="card-title fm-rale text-left rosso fw-bolder">Contenuti recenti</h5>
+              {% set primo_scenario = scenari|first %}
+              {% if primo_scenario %}
+                <div class="card border-0">
+                  <div class="card-body p-0">
+                    <a href="{{ primo_scenario.link }}"><img class="card-img-top img-item_last" src="{{ primo_scenario.scenario.copertina.url }}" alt="{{ primo_scenario.title }}" /></a>
+                    <span class="typost text-uppercase">Scenari</span>
+                    <h6 class="card-title">{{ primo_scenario.title }}</h6>
+                  </div>
+                </div>
+              {% endif %}
+
+              {% set primo_video = video|first %}
+              {% if primo_video %}
+                <div class="card border-0">
+                  <div class="card-body p-0">
+                    <a href="{{ primo_video.link }}"><img class="card-img-top img-item_last" src="{{ primo_video.video.copertina.url }}" alt="{{ primo_video.title }}" /></a>
+                    <span class="typost text-uppercase">Video</span>
+                    <h6 class="card-title">{{ primo_video.title }}</h6>
+                  </div>
+                </div>
+              {% endif %}
+
+              {% set prima_risorsa = risorse|first %}
+              {% if prima_risorsa %}
+                <div class="card border-0">
+                  <div class="card-body p-0">
+                    <a href="{{ prima_risorsa.link }}"><img class="card-img-top img-item_last" src="{{ prima_risorsa.risorse.copertina.url }}" alt="{{ prima_risorsa.title }}" /></a>
+                    <span class="typost text-uppercase">Risorse</span>
+                    <h6 class="card-title">{{ prima_risorsa.title }}</h6>
+                  </div>
+                </div>
+              {% endif %}
+            </div>
+          </div>
+        </div>

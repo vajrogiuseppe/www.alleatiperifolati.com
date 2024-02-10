@@ -1,0 +1,72 @@
+<!-- Button trigger modal -->
+<button type="button" class="btn btn-primary text-uppercase" data-bs-toggle="modal" data-bs-target="#myModel" id="shareBtn" data-bs-placement="top">{% include 'partial/icon/share-icon.twig' %}</button>
+
+<!-- Modal -->
+<div class="modal fade" id="myModel" tabindex="-1" aria-labelledby="myModelLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content modalshare">
+      <div class="modal-header w-100">
+        <h5 class="modal-title rosso fm-rale fw-bolder" id="myModelLabel">Condividi</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body w-100">
+        <div class="d-flex align-items-center justify-content-between">
+          <div class="icon-share d-flex w-100 justify-content-between">
+            <div class="icons">
+              <a href="mailto:?subject=Guarda%20questa%20pagina&body=Ti%20invio%20questa%20pagina:%20{{ post.link }}" class="fs-5 d-flex align-items-center justify-content-center">
+                <div class="icon_bg">
+                  {% include 'partial/icon/mail-icon.twig' %}
+                </div>
+                <span class="font-grey">Mail</span>
+              </a>
+            </div>
+            <div class="icon-share d-flex">
+              <div class="icons">
+                <a href="whatsapp://send?text=Guarda%20questa%20pagina:%20{{ post.link }}" class="fs-5 d-flex align-items-center justify-content-center">
+                  <div class="icon_bg icons-wa">
+                    {% include 'partial/icon/whatsapp.twig' %}
+                  </div>
+                  <span class="font-grey">Whatsapp</span>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="divider"></div>
+      <div class="d-flex align-items-center justify-content-between w-100">
+        <p class="m-0">Copia link</p>
+        <div class="share_icon share-btn clipboard">
+          <div class="">
+            {% include 'partial/icon/copy-icon.twig' %}
+          </div>
+        </div>
+      </div>
+          <div class="copy-message d-none">Copiato con successo</div>
+
+    </div>
+  </div>
+</div>
+
+<script>
+  document.addEventListener('DOMContentLoaded', function () {
+    var clipboardBtn = document.querySelector('.clipboard')
+    var copyMessage = document.querySelector('.copy-message')
+  
+    clipboardBtn.addEventListener('click', function () {
+      var url = window.location.href
+      navigator.clipboard
+        .writeText(url)
+        .then(function () {
+          copyMessage.classList.remove('d-none')
+          setTimeout(function () {
+            copyMessage.classList.add('d-none')
+          }, 2000)
+        })
+        .catch(function (error) {
+          console.error('Errore nella copia negli appunti:', error)
+          alert('Si è verificato un errore durante la copia del link negli appunti. Si prega di copiarlo manualmente.')
+        })
+    })
+  })
+</script>

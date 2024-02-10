@@ -71,6 +71,7 @@ function register_video_post_type() {
         'public' => true,
         'has_archive' => true,
         'supports' => array('title', 'editor', 'thumbnail'),
+        'taxonomies' => array('category'),
     ));
 }
 
@@ -126,18 +127,54 @@ add_action( 'init', 'register_autore_taxonomy' );
 
 
 function register_risorse_post_type() {
-    register_post_type('Risorse', array(
+    register_post_type('risorse', array(
         'labels' => array(
             'name' => 'Risorse',
-            'singular_name' => 'risorse',
+            'singular_name' => 'Risorsa',
         ),
         'public' => true,
         'has_archive' => true,
         'supports' => array('title', 'editor', 'thumbnail'),
+        'taxonomies' => array('category'),
     ));
 }
 
 add_action('init', 'register_risorse_post_type');
+
+
+// Esempio di logica nella gestione della ricerca
+function custom_search_logic($search_term) {
+    // Effettua la ricerca dei post di tipo "scenari"
+    $scenari_results = get_posts(array(
+        'post_type' => 'scenari',
+        's' => $search_term,
+        'posts_per_page' => -1, // Recupera tutti i risultati
+    ));
+
+    // Effettua la ricerca dei post di tipo "risorse"
+    $risorse_results = get_posts(array(
+        'post_type' => 'risorse',
+        's' => $search_term,
+        'posts_per_page' => -1, // Recupera tutti i risultati
+    ));
+
+    // Effettua la ricerca dei post di tipo "video"
+    $video_results = get_posts(array(
+        'post_type' => 'video',
+        's' => $search_term,
+        'posts_per_page' => -1, // Recupera tutti i risultati
+    ));
+
+    // Combinare tutti i risultati in un'unica struttura dati
+    $combined_results = array(
+        'scenari' => $scenari_results,
+        'risorse' => $risorse_results,
+        'video' => $video_results,
+    );
+
+    return $combined_results;
+}
+
 
      
 

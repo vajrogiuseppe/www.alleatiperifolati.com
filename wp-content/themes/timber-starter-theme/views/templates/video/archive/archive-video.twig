@@ -5,54 +5,77 @@
   <div class="container-fluid mt-5 mb-5">
     <div class="container">
       <div class="row">
-        <div class="col-12">
-          <h3 class="rosso fm-rale fw-bolder">Videopillole</h3>
-        </div>
-        <div class="col-md-8 col-12">
+        <div class="col-md-9 col-12">
           <div class="row">
+             <h3 class="rosso fm-rale fw-bolder">Videopillole</h3>
             <div class="row row-cols-1 row-cols-md-2 g-4">
               {% for post in video %}
-                <div class="col-4">
-                 <a href="{{ post.link }}">
-                  <div class="card border-0" id="{{ post.ID }}">
-                   
-                      <div class="ratio ratio-16x9">
-                        <iframe src="{{ post.video.linkvideo }}" allowfullscreen></iframe>
-                      </div>
-                    
-                    <div class="card-body">
-                      <h5 class="card-title fm-rale text-left rosso fw-bolder">{{ post.title }}</h5>
-                      <p class="autor_archive fm-roboto">A cura di: {{ post.video.autore['0']|default('Nessun autore specificato') }}</p>
+                {# Verifica se il post ha una categoria associata #}
+                {% if post.categories %}
+                  {# Controlla se la categoria "Videopillole" è presente tra le categorie del post #}
+                  {% set isVideoPillola = false %}
+                  {% for category in post.categories %}
+                    {% if category.name == 'Videopillole' %}
+                      {% set isVideoPillola = true %}
+                    {% endif %}
+                  {% endfor %}
+                  {# Se il post è associato alla categoria "Videopillole", lo visualizza #}
+                  {% if isVideoPillola %}
+                    <div class="col-md-4 col-12">
+                      <a href="{{ post.link }}">
+                        <div class="card border-0" id="{{ post.ID }}">
+                          <a href="{{ post.link }}"><img class="card-img-top" src="{{ post.video.copertina.url }}" alt="{{ post.title }}" /></a>
+                          <div class="card-body p-0 border-0">
+                            <h5 class="card-title fm-rale text-left rosso fw-bolder">{{ post.title }}</h5>
+                            <p class="autor_archive fm-roboto">A cura di: {{ post.video.autore['0']|default('Nessun autore specificato') }}</p>
+                          </div>
+                        </div>
+                      </a>
                     </div>
-                  </div>
-                  </a>
-                </div>
+                  {% endif %}
+                {% endif %}
               {% endfor %}
             </div>
-            {% include 'partial/pagination.twig' %}
           </div>
           <div class="row mt-5">
             <div class="col-12 mt-3">
-              <h3 class="rosso fm-rale fw-bolder">Videopillole</h3>
+              <h3 class="rosso fm-rale fw-bolder mb-5">Educational video</h3>
+              <div class="row row-cols-1 row-cols-md-2 g-4">
+                {% for post in video %}
+                  {# Verifica se il post ha una categoria associata #}
+                  {% if post.categories %}
+                    {# Controlla se la categoria "Educational video" è presente tra le categorie del post #}
+                    {% set isEducational = false %}
+                    {% for category in post.categories %}
+                      {% if category.name == 'Educational video' %}
+                        {% set isEducational = true %}
+                      {% endif %}
+                    {% endfor %}
+                    {# Se il post è associato alla categoria "Educational video", lo visualizza #}
+                    {% if isEducational %}
+                      <div class="col-md-4 col-12">
+                        <a href="{{ post.link }}">
+                          <div class="card border-0" id="{{ post.ID }}">
+                            <a href="{{ post.link }}"><img class="card-img-top" src="{{ post.video.copertina.url }}" alt="{{ post.title }}" /></a>
+                            <div class="card-body  p-0 border-0">
+                              <h5 class="card-title fm-rale text-left rosso fw-bolder">{{ post.title }}</h5>
+                              <div class="fm-roboto fs-small">{{ post.video.descrizione|raw }}</div>
+                            </div>
+                          </div>
+                        </a>
+                      </div>
+                    {% endif %}
+                  {% endif %}
+                {% endfor %}
+              </div>
             </div>
           </div>
         </div>
-        <div class="col-12 col-md-4">
-          <div class="row">
-            <div class="lastpost">
-              <h5 class="card-title fm-rale text-left rosso fw-bolder">Contenuti recenti</h5>
-              {% for ultimopost in scenari %}
-                <div class="card border-0">
-                  <div class="card-body">
-                    <a href="{{ post.link }}"><img class="card-img-top img-item_last" src="{{ ultimopost.scenario.copertina.url }}" alt="{{ post.title }}" /></a>
-                    <h5 class="card-title">{{ ultimopost.title }}</h5>
-                  </div>
-                </div>
-              {% endfor %}
-            </div>
-          </div>
-        </div>
+       {% include 'partial/sidebar-post.twig' %}
       </div>
     </div>
   </div>
+    <div class="container-fluid p-0 cta-full">
+     {% include 'partial/cta_doctor.twig' %}
+</div>
 {% endblock %}

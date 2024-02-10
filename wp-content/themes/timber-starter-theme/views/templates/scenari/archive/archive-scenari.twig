@@ -5,14 +5,14 @@
   <div class="container-fluid mt-5 mb-5">
     <div class="container">
       <div class="row">
-        <div class="col-md-8 col-12">
+        <div class="col-md-9 col-12">
           <div class="row">
             <div class="row row-cols-1 row-cols-md-2 g-4">
               {% for post in scenari %}
                 <div class="col-4">
-                  <div class="card" id="{{ post.ID }}">
+                  <div class="card border-0" id="{{ post.ID }}">
                     <a href="{{ post.link }}"><img class="card-img-top" src="{{ post.scenario.copertina.url }}" alt="{{ post.title }}" /></a>
-                    <div class="card-body">
+                    <div class="card-body p-0 border-0">
                       <h5 class="card-title fm-rale text-left rosso fw-bolder">{{ post.title }}</h5>
                       <p class="autor_archive fm-roboto">A cura di: {{ post.scenario.autore['0']|default('Nessun autore specificato') }}</p>
                     </div>
@@ -20,26 +20,15 @@
                 </div>
               {% endfor %}
             </div>
-            {% include 'partial/pagination.twig' %}
 
           </div>
         </div>
-        <div class="col-12 col-md-4">
-          <div class="row">
-            <div class="lastpost">
-              <h5 class="card-title fm-rale text-left rosso fw-bolder">Contenuti recenti</h5>
-              {% for ultimopost in scenari %}
-                <div class="card border-0">
-                  <div class="card-body">
-                    <a href="{{ post.link }}"><img class="card-img-top img-item_last" src="{{ ultimopost.scenario.copertina.url }}" alt="{{ post.title }}" /></a>
-                    <h5 class="card-title">{{ ultimopost.title }}</h5>
-                  </div>
-                </div>
-              {% endfor %}
-            </div>
-          </div>
-        </div>
+         {% include 'partial/sidebar-post.twig' %}
+
       </div>
     </div>
   </div>
+    <div class="container-fluid p-0 cta-full">
+     {% include 'partial/cta_doctor.twig' %}
+</div>
 {% endblock %}

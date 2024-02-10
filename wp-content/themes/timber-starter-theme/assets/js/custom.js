@@ -24,4 +24,6 @@ const clearInput = () => {
   const clearBtn = document.getElementById("clear-btn");
   clearBtn.addEventListener("click", clearInput);
   
-  
+
+
+
