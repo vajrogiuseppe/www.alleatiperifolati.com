@@ -18,22 +18,34 @@
     </div>
   </div>
   <div class="container mb-5">
-    <div class="row">
+    <div class="row pmobile-20">
       <div class="col-12 col-md-9">
         <div class="video_single singlepost" id="{{ post.ID }}">
-          <div class="divplaymodal position-relative">
-            <div class="vidoplay">
-              <button type="button" class="ghost" data-bs-toggle="modal" data-bs-target="#staticBackdrop"><img src="{{ site.link }}/wp-content/uploads/2024/02/play.svg" /></button>
-              
+          <div class=" position-relative">
+            {% if post.video.videourl.youtube is not empty %}
+            <div class="embed-responsive embed-responsive-16by9">
+              <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/{{ post.video.videourl.youtube }}" title="{{ post.title }}" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen style="    width: 100%;
+    height: 580px;"></iframe>
             </div>
+          {% elseif post.video.videourl.vimeo is not empty %}
+            <div class="embed-responsive embed-responsive-16by9">
+              <iframe class="embed-responsive-item" src="https://player.vimeo.com/video/{{ post.video.videourl.vimeo }}" title="{{ post.title }}" allow="autoplay; fullscreen" allowfullscreen style="    width: 100%;
+    height: 580px;"></iframe>
+            </div>
+          {% else %}
+            <video class="w-100" controls>
+              <source src="{{ post.video.videourl.videoupload.url }}" type="video/mp4" style="    width: 100%;
+    height: 580px;">
+              Your browser does not support the video tag.
+            </video>
+          {% endif %}
             
-            <img class="card-img-top" src="{{ post.video.copertina.url }}" alt="{{ post.title }}" />
           </div>
           <div class="card-body p-0 border-0">
             <h5 class="card-title fmbig fm-rale text-left rosso fw-bolder">{{ post.title }}</h5>
             <div class="last-post_flex d-flex justify-content-between align-items-center">
               <div class="text">
-                <p class="autor_archive fm-roboto m-0">A cura di: {{ post.video.autore['0']|default('Nessun autore specificato') }}</p>
+                <p class="autor_archive fm-roboto m-0">{{ post.video.autore.label }} <span>{{ post.video.autore.autor }}</p>
               </div>
               <div class="share-single_post">
                 <div class="icon_bg">
@@ -48,7 +60,7 @@
    
       <div class="col-12 col-md-3">
         <div class="lastpost">
-          <h5 class="card-title fm-rale text-left rosso fw-bolder">Contenuti recenti</h5>
+          <h5 class="card-title fm-rale text-left rosso fw-bolder">Altri video</h5>
           {% for video in video|slice(0, 3) %}
             <div class="card border-0 mt-5">
               <div class="card-body p-0 d-flex align-items-center">
@@ -63,31 +75,7 @@
   </div>
 
 
-     <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
-        <div class="modal-dialog videomodal">
-          <div class="modal-content">
-              <button type="button" class="btn-close btmodalclose btn-close-white" 
-              data-bs-dismiss="modal" aria-label="Close">
-                 <div class="custom-background"></div>
-            <span aria-hidden="true">&times;</span>
-              </button>
-             <div class="modal-body p-0">
-          {% if post.video.videourl.youtube is not empty %}
-            <div class="embed-responsive embed-responsive-16by9">
-              <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/{{ post.video.videourl.youtube }}" title="{{ post.title }}" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-            </div>
-          {% elseif post.video.videourl.vimeo is not empty %}
-            <div class="embed-responsive embed-responsive-16by9">
-              <iframe class="embed-responsive-item" src="https://player.vimeo.com/video/{{ post.video.videourl.vimeo }}" title="{{ post.title }}" allow="autoplay; fullscreen" allowfullscreen></iframe>
-            </div>
-          {% else %}
-            <video class="w-100" controls>
-              <source src="{{ post.video.videourl.videoupload.url }}" type="video/mp4">
-              Your browser does not support the video tag.
-            </video>
-          {% endif %}
-        </div>
-      </div>
-    </div>
+    
+  
   </div>
 {% endblock %}

@@ -9,12 +9,12 @@
           <div class="row">
             <div class="row row-cols-1 row-cols-md-2 g-4">
               {% for post in scenari %}
-                <div class="col-4">
+                <div class="col-md-4 col-12">
                   <div class="card border-0" id="{{ post.ID }}">
                     <a href="{{ post.link }}"><img class="card-img-top" src="{{ post.scenario.copertina.url }}" alt="{{ post.title }}" /></a>
                     <div class="card-body p-0 border-0">
                       <h5 class="card-title fm-rale text-left rosso fw-bolder">{{ post.title }}</h5>
-                      <p class="autor_archive fm-roboto">A cura di: {{ post.scenario.autore['0']|default('Nessun autore specificato') }}</p>
+                      <p class="autor_archive fm-roboto"> {{ post.scenario.autore.label }} <span>{{ post.scenario.autore.autor }}</span></p>
                     </div>
                   </div>
                 </div>
@@ -24,7 +24,6 @@
           </div>
         </div>
          {% include 'partial/sidebar-post.twig' %}
-
       </div>
     </div>
   </div>

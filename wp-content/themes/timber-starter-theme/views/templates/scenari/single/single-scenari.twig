@@ -26,9 +26,8 @@
             <h5 class="card-title fmbig fm-rale text-left rosso fw-bolder">{{ post.title }}</h5>
             <div class="last-post_flex d-flex justify-content-between align-items-center">
               <div class="text">
-                {{ post.scenario.descrizione|raw }}
+                {{ post.scenario.iframe|raw }}
               </div>
-
               <div class="share-single_post">
                 <div class="icon_bg">
                   {% include 'partial/share.twig' %}

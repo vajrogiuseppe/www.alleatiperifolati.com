@@ -9,7 +9,7 @@
           <div class="row">
             <div class="row row-cols-1 row-cols-md-2 g-4">
               {% for post in risorse %}
-                <div class="col-4">
+                <div class="col-md-4 col-12">
                   <div class="card border-0" id="{{ post.ID }}">
                     <img class="card-img-top" src="{{ post.risorse.copertina.url }}" alt="{{ post.title }}" />
                     <div class="card-body p-0 border-0">
@@ -33,7 +33,7 @@
             </div>
           </div>
         </div>
-        {% include 'partial/sidebar-post.twig' %}
+         {% include 'partial/sidebar-post.twig' %}
       </div>
     </div>
   </div>

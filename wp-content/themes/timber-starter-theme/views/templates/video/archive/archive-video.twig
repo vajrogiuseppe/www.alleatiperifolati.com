@@ -27,7 +27,7 @@
                           <a href="{{ post.link }}"><img class="card-img-top" src="{{ post.video.copertina.url }}" alt="{{ post.title }}" /></a>
                           <div class="card-body p-0 border-0">
                             <h5 class="card-title fm-rale text-left rosso fw-bolder">{{ post.title }}</h5>
-                            <p class="autor_archive fm-roboto">A cura di: {{ post.video.autore['0']|default('Nessun autore specificato') }}</p>
+                            <p class="autor_archive fm-roboto">{{ post.video.autore.label }} <span>{{ post.video.autore.autor }}</p>
                           </div>
                         </div>
                       </a>
@@ -71,7 +71,7 @@
             </div>
           </div>
         </div>
-       {% include 'partial/sidebar-post.twig' %}
+         {% include 'partial/sidebar-post.twig' %}
       </div>
     </div>
   </div>

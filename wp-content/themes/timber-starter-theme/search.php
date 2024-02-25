@@ -9,17 +9,27 @@
  * @since   Timber 0.1
  */
 
-$templates = array( 'search.twig', 'archive.twig', 'index.twig' );
+ $context['title'] = 'Risultati di ricerca: ' . get_search_query();
 
-$context          = Timber::context();
-$context['title'] = 'Risultati di ricerca: ' . get_search_query();
-
-// Aggiungi la logica di ricerca
-$search_query = get_search_query();
-$args = array(
-    's' => $search_query,
-);
-
-$context['posts'] = Timber::get_posts( $args );
-
-Timber::render( $templates, $context );
+ // Aggiungi la logica di ricerca
+ $search_query = get_search_query();
+ $args = array(
+     's' => $search_query,
+ );
+ 
+ // Ottieni il contesto esistente
+ $context = Timber::get_context();
+ 
+ // Aggiungi i risultati della ricerca al contesto con una chiave diversa
+ $context['search_results'] = Timber::get_posts($args);
+ 
+ // Aggiungi i post di diversi tipi al contesto
+ $context['scenari'] = Timber::get_posts(array('post_type' => 'scenari'));
+ $context['fascia'] = Timber::get_posts(array('post_type' => 'fascia'));
+ $context['video'] = Timber::get_posts(array('post_type' => 'video'));
+ $context['risorse'] = Timber::get_posts(array('post_type' => 'risorse'));
+ 
+ $templates = array( 'search.twig' ); 
+ 
+ Timber::render( $templates, $context );
+ 

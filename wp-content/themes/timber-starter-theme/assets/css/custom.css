@@ -31,10 +31,15 @@ a:hover {
   color: #CF2041 !important;
 }
 
+@media (max-width: 900px) {
+  .pmobile-20 {
+    padding: 0 20px;
+  }
+}
 .bg-home {
   background: url(/wp-content/uploads/2024/01/header-bg.png);
   background-size: contain;
-  background-position: 0px 30%;
+  background-position: 0px 24%;
   background-repeat: no-repeat;
 }
 @media (max-width: 900px) {
@@ -380,6 +385,11 @@ a:hover {
   align-items: center;
 }
 @media (max-width: 900px) {
+  .cta_footer .cta .text_cta {
+    padding: 0;
+  }
+}
+@media (max-width: 900px) {
   .cta_footer .cta .text_cta h3 {
     font-size: 2em;
     margin: 30px 0;
@@ -396,8 +406,19 @@ a:hover {
 .cta-full .cta .img_cta {
   width: 14%;
 }
+@media (max-width: 900px) {
+  .cta-full .cta .img_cta {
+    width: 50%;
+  }
+}
 .cta-full .cta .cta_button {
   width: 17%;
+}
+@media (max-width: 900px) {
+  .cta-full .cta .cta_button {
+    width: 50%;
+    margin-bottom: 40px;
+  }
 }
 
 .btn-cta {
@@ -583,6 +604,12 @@ div#searchModal form {
   justify-content: space-between;
   align-items: center;
 }
+@media (max-width: 900px) {
+  .bg-login {
+    flex-direction: column;
+    flex-wrap: wrap;
+  }
+}
 .bg-login .login_logo-wrapper {
   border-radius: 0px 168px 168px 0px;
   background: #FFF;
@@ -592,15 +619,35 @@ div#searchModal form {
   width: 50%;
   height: 100vh;
 }
+@media (max-width: 900px) {
+  .bg-login .login_logo-wrapper {
+    border-radius: 50px;
+    width: 90%;
+    height: auto;
+    padding: 0px;
+    margin: 20px;
+  }
+}
 .bg-login .login_logo-wrapper img {
   padding: 30px;
   max-width: 40%;
+}
+@media (max-width: 900px) {
+  .bg-login .login_logo-wrapper img {
+    padding: 40px;
+    max-width: 100%;
+  }
 }
 .bg-login .login_doc-wrapper {
   display: flex;
   justify-content: center;
   align-items: center;
   width: 50%;
+}
+@media (max-width: 900px) {
+  .bg-login .login_doc-wrapper {
+    width: 100%;
+  }
 }
 .bg-login .login_doc-wrapper .wrapper_login {
   display: flex;
@@ -612,6 +659,18 @@ div#searchModal form {
   border-radius: 8px;
   border: 1px solid var(--grey-base, #C7C7C1);
   background: rgba(255, 255, 255, 0.8);
+}
+@media (max-width: 900px) {
+  .bg-login .login_doc-wrapper .wrapper_login {
+    width: 90%;
+    margin-bottom: 60px;
+    border-radius: 20px;
+  }
+}
+@media (max-width: 900px) {
+  .bg-login .login_doc-wrapper .text_block {
+    text-align: center;
+  }
 }
 .bg-login .login_doc-wrapper .text_block h3 {
   font-size: 41px;
@@ -679,6 +738,12 @@ div#searchModal form {
   position: relative;
   top: -30px;
   max-width: 170px;
+}
+@media (max-width: 900px) {
+  .bg-header_page .img img {
+    top: -22px;
+    max-width: 140px;
+  }
 }
 
 .fs-small p {
@@ -865,4 +930,24 @@ p.autor_archive.fm-roboto {
   font-size: 40px;
   top: -13px;
   left: 7px;
+}
+
+.accordioncontatc {
+  background-color: #F4F4EF;
+}
+
+.accordion-button:not(.collapsed) {
+  background-color: #fff;
+  color: #000;
+}
+
+.accordion-flush {
+  box-shadow: 0px 8px 20px 0px rgba(0, 0, 0, 0.15);
+}
+
+.contact-info a {
+  text-decoration: underline !important;
+}
+.contact-info ul {
+  font-size: 20px;
 }/*# sourceMappingURL=custom.css.map */

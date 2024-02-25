@@ -1,22 +1,40 @@
 {% extends 'base.twig' %}
 
 {% block content %}
-  <div class="container-fluid p-0">
+  <div class="container-fluid p-0 pt-5">
+      <div class="cta_footer">
+    <div class="container">
     <div class="container mt-5 mb-5">
-      <div class="accordion" id="accordionPanelsStayOpenExample">
-        <div class="accordion-item">
-          <h2 class="accordion-header" id="panelsStayOpen-headingOne"><button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseOne" aria-expanded="true" aria-controls="panelsStayOpen-collapseOne">Contattaci</button></h2>
-          <div id="panelsStayOpen-collapseOne" class="accordion-collapse collapse show" aria-labelledby="panelsStayOpen-headingOne">
-            <div class="accordion-body">
-              <strong>This is the first item's accordion body.</strong> 
-              <p>Se desidera contattare direttamente il servizio  può:</p>
-                Telefonare a: +39 02 66524038
-                Inviare un fax: +39 02 66524038
-                Inviare un’email: drugsafety@zambongroup.com
+      <div class="accordion accordion-flush" id="accordionFlushExample">
+        <div class="accordion-item border contact-info">
+          <div class="accordion-header" id="flush-headingOne">
+            <button class="accordion-button collapsed d-flex align-items-start flex-column" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseOne" aria-expanded="false" aria-controls="flush-collapseOne">
+              <h2 class="rosso fm-rale text-center fw-bolder contacttitle">Farmacovigilanza</h2>
+              <p class="m-0">Per segnalazioni di Sospette Reazioni Avverse (Adverse Drug Reaction – ADR) Clicca qui</p>
+            </button>
+          </div>
+          <div id="flush-collapseOne" class="accordion-collapse collapse" aria-labelledby="flush-headingOne" data-bs-parent="#accordionFlushExample">
+            <div class="accordion-body accordioncontatc">
+              <p class="textaccrod">
+                Ogni effetto indesiderato che si manifesta nel corso di una terapia deve essere segnalato tempestivamente al medico curante o al farmacista. <p/>
+                <p> Per segnalazioni di Sospette Reazioni Avverse (Adverse Drug Reaction – ADR) da parte degli operatori sanitari o cittadini si consiglia di seguire le indicazioni presenti sul sito AIFA (Agenzia Italiana del Farmaco):
+                <a href="https://www.aifa.gov.it/content/segnalazioni-reazioni-avverse">https://www.aifa.gov.it/content/segnalazioni-reazioni-avverse</a> <p/>
+                Se desidera contattare direttamente il servizio di farmacovigilanza di Zambon può:
+                <ul>
+                  <li> Telefonare a: <a href="tel:+39026652-4444">+39026652-4444</a> o <a href="+39 02665241">+39 02665241</a> (centralino)</li>
+                  <li>Inviare un fax: +39 02 66524038Inviare un’email: <a href="mailto:drugsafety@zambongroup.com">drugsafety@zambongroup.com</a></li>
+                </ul>
+              </p>
             </div>
           </div>
         </div>
       </div>
     </div>
+      </div>
+    </div>
   </div>
+
+
+
+</div>
 {% endblock %}

@@ -44,10 +44,22 @@ a {
     }
 }
 
+
+
+@media (max-width: 900px) {
+    .pmobile-20{
+        padding:0 20px;
+    }
+}
+
+
+
+
+
 .bg-home {
     background: url(/wp-content/uploads/2024/01/header-bg.png);
     background-size: contain;
-    background-position: 0px 30%;
+    background-position: 0px 24%;
     background-repeat: no-repeat;
 
     @media (max-width: 900px) {
@@ -425,7 +437,9 @@ a {
             display: flex;
             flex-direction: column;
             align-items: center;
-
+            @media (max-width: 900px) {
+                padding: 0;
+            }
             @media (max-width: 900px) {
                 h3 {
                     font-size: 2em;
@@ -448,10 +462,17 @@ a {
 
         .img_cta {
             width: 14%;
+            @media (max-width: 900px) {
+                width: 50%;
+            }
         }
 
         .cta_button {
             width: 17%;
+            @media (max-width: 900px) {
+                width: 50%;
+                margin-bottom: 40px;
+            }
         }
     }
 
@@ -666,6 +687,11 @@ div#searchModal {
     justify-content: space-between;
     align-items: center;
 
+    @media (max-width: 900px) {
+        flex-direction: column;
+        flex-wrap: wrap;
+    }
+
     .login_logo-wrapper {
         border-radius: 0px 168px 168px 0px;
         background: #FFF;
@@ -675,9 +701,21 @@ div#searchModal {
         width: 50%;
         height: 100vh;
 
+        @media (max-width: 900px) {
+            border-radius: 50px;
+            width: 90%;
+            height: auto;
+            padding: 0px;
+            margin: 20px;
+        }
+
         img {
             padding: 30px;
             max-width: 40%;
+            @media (max-width: 900px) {
+                padding: 40px;
+                max-width: 100%;
+            }
         }
     }
 
@@ -686,7 +724,9 @@ div#searchModal {
         justify-content: center;
         align-items: center;
         width: 50%;
-
+        @media (max-width: 900px) {
+            width: 100%;
+        }
         .wrapper_login {
             display: flex;
             padding: 64px 24px 88px 24px;
@@ -697,9 +737,17 @@ div#searchModal {
             border-radius: 8px;
             border: 1px solid var(--grey-base, #C7C7C1);
             background: rgba(255, 255, 255, 0.80);
+            @media (max-width: 900px) {
+                width: 90%;
+                margin-bottom: 60px;
+                border-radius: 20px;
+            }
         }
 
         .text_block {
+            @media (max-width: 900px) {
+               text-align: center;
+            }
             h3 {
                 font-size: 41px;
                 font-style: normal;
@@ -781,6 +829,10 @@ div#searchModal {
             position: relative;
             top: -30px;
             max-width: 170px;
+            @media (max-width: 900px) {
+                top: -22px;
+                max-width: 140px;
+            }
         }
     }
 }
@@ -886,6 +938,7 @@ p.autor_archive.fm-roboto {
     justify-content: center;
     align-items: center;
     border-radius: 64px;
+
     &.icons-wa {
         border-radius: 652.007px;
         background: linear-gradient(0deg, #20B038 0%, #60D66A 100%);
@@ -907,10 +960,10 @@ p.autor_archive.fm-roboto {
     cursor: pointer;
     transition: 0.4s ease-in-out;
 
-        &:hover {
-            background:  #bbb9b9;
+    &:hover {
+        background: #bbb9b9;
 
-        }
+    }
 }
 
 
@@ -946,8 +999,8 @@ p.autor_archive.fm-roboto {
 }
 
 
-.fmbig{
-    font-size: 29px!important;
+.fmbig {
+    font-size: 29px !important;
 }
 
 .share-single_post {
@@ -955,19 +1008,20 @@ p.autor_archive.fm-roboto {
     align-items: center;
     justify-content: center;
     flex-direction: column;
-    .icon_bg{
+
+    .icon_bg {
         width: 50px;
         height: 50px;
     }
 }
 
-.img-margin{
+.img-margin {
     margin-right: 20px;
 }
 
 
 
-.vidoplay{
+.vidoplay {
     position: absolute;
     left: 50%;
     top: 50%;
@@ -975,23 +1029,24 @@ p.autor_archive.fm-roboto {
 }
 
 
-.ghost{
+.ghost {
     border: none;
     border-radius: 100%;
     background: transparent;
 }
 
-.videomodal{
+.videomodal {
     max-width: 60%;
     margin: auto;
-    .embed-responsive-item{
+
+    .embed-responsive-item {
         width: 100%;
         height: 500px;
     }
 }
 
 
-.btmodalclose{
+.btmodalclose {
     position: absolute;
     top: 50%;
     left: -20px;
@@ -1000,6 +1055,7 @@ p.autor_archive.fm-roboto {
     background-color: #000;
     border-radius: 100%;
     opacity: 1;
+
     span {
         z-index: 9999;
         color: #fff;
@@ -1010,3 +1066,30 @@ p.autor_archive.fm-roboto {
     }
 
 }
+
+
+
+.accordioncontatc{
+    background-color: #F4F4EF;
+   
+}
+
+.accordion-button:not(.collapsed){
+    background-color: #fff;
+    color: #000;
+}
+
+.accordion-flush{
+    box-shadow:0px 8px 20px 0px rgba(0, 0, 0, 0.15)
+
+}
+.contact-info{
+    a{
+        text-decoration: underline!important;
+    }
+    ul{
+        font-size: 20px;
+    }
+}
+
+
