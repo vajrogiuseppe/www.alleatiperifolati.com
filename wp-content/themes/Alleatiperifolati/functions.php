@@ -176,6 +176,53 @@ function custom_search_logic($search_term) {
 }
 
 
+
+
+// Funzione per cambiare il logo di login di WordPress
+function my_login_logo() {
+    echo '<style type="text/css">
+    body.login {
+        background-color: #fff;
+    }
+        .login h1 a {
+            background-image: url(' . get_stylesheet_directory_uri() . '/assets/img/Favicon.png) !important;
+            height: 65px !important;
+            width: 320px !important;
+            background-size: contain !important;
+            background-repeat: no-repeat !important;
+            padding-bottom: 30px !important;
+        }
+        .login #wp-submit {
+            background-color: #A61A34; 
+            border-color: #A61A34;
+        }
+        .login #wp-submit:hover {
+            background-color: #CF2041; 
+            border-color: #CF2041;
+        }
+    </style>';
+}
+add_action('login_head', 'my_login_logo');
+
+
+
+// Redirect userDemo alla homepage dopo il login
+function custom_login_redirect($redirect_to, $request, $user) {
+    // Verifica se l'utente ha il ruolo di "Sottoscrittore"
+    if (isset($user->roles) && is_array($user->roles) && in_array('subscriber', $user->roles)) {
+        // Reindirizza alla homepage
+        return home_url('/');
+    }
+    // Altrimenti, ritorna il reindirizzamento predefinito
+    return $redirect_to;
+}
+add_filter('login_redirect', 'custom_login_redirect', 10, 3);
+
+
+
      
 
 new StarterSite();
+
+
+
